@@ -83,8 +83,17 @@ df = optimize_parameters(parameters, classifiers, X, y)
 
 and it will be saved in `output/classical_output` folder.
 
+## Plots
+
+In the `plots` folder, we provide python codes that were used to generate plots in the paper.
+
+## Dataset Classification
+
+In the `Dataset Classification` folder, we provide python code that characterizes the strucutre of a given dataset based on the methodology explained in [Types of minority class examples and their influence on learning classifiers from imbalanced data][4]. This corresponds to the `Appendix A: Classification of datasets` in our paper.
 
 
-[1]: https://arxiv.org/abs/2012.00058
+
+[1]: https://arxiv.org/abs/2012.00058L
 [2]: https://archive.ics.uci.edu/about
 [3]: https://ax.dev/
+[4]: https://link.springer.com/article/10.1007/s10844-015-0368-1
