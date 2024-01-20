@@ -40,11 +40,11 @@ The output `f1_scores` is a `dictionary` of form:
 
 In the `classical_classifiers` folder, we provide python code that uses  [ax-platform][3] to optimize hyperparameters of classical supervised learning models. The code is capable of optimizing the hyperparameters of 13 standard supervised learning models including XGBoost, CatBoost, and Random Forest Classifiers etc.
 
-For example, to perform hyperparameter optimization on `Hepatitis` dataset for XGBoost and Random Forest Classifiers, we first load the data set:
+For example, to perform hyperparameter optimization on `Parkinson` dataset for XGBoost and Random Forest Classifiers, we first load the data set:
 
 ```python
 from helstrom_classifier.load_data import load_datasets
-X, y  = load_datasets('hepatitis')
+X, y  = load_datasets('parkinson')
 ```
 Then, we define appropriate hyperparameter search space:
 ```python
@@ -74,6 +74,13 @@ from classical_classifiers.optimize_loop import optimize_parameters
 df = optimize_parameters(parameters, classifiers, X, y)
 
 ```
+`df` is in `DataFrame` form:
+
+| Classifiers| f1_score |
+| -------- | -------- | 
+| RandomForest   | 0.8829  | 
+| XGBoost    | 0.9001   | 
+
 
 
 
