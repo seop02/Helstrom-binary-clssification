@@ -81,7 +81,7 @@ df = optimize_parameters(parameters, classifiers, X, y)
 | RandomForest   | 0.8829  | 
 | XGBoost    | 0.9001   | 
 
-
+and it will be saved in `output/classical_output` folder.
 
 
 
