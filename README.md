@@ -29,5 +29,14 @@ f1_scores = helstrom_simulator(X=X, y=y, max_copies=100, d_type=torch.float64, n
 
 `max_copies` sets the upper bound of quantum copies, `name` is used when saving the classification score and f1 score in `results` folder. `start` sets the starting point of the number of quantum copies, and `step_size` sets the increment of quantum copies. In this case, we are running the HQCS from quantum copies one to hundred with increment of 0.25.
 
+The output `f1_scores` is a `dictionary` of form:
+```python
+{'f1_hel': 1.0, 'copies_hel': 0.25, 'f1_fid': 1.0, 'copies_fid': 0.75}
+```
+`f1_hel` and `f1_fid` are the maximum f1 score achieved in the given boundary of quantum copies.
+`copies_hel` and `copies_fid` are corresponding number of quantum copies at which the maximum occurs
+
+
+
 [1]: https://arxiv.org/abs/2012.00058
 [2]: https://archive.ics.uci.edu/about
