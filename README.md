@@ -27,7 +27,7 @@ from helstrom_classifier.helstrom import helstrom_simulator
 f1_scores = helstrom_simulator(X=X, y=y, max_copies=100, d_type=torch.float64, name='iris', start=1, step_size=0.25)
 ```
 
-`max_copies` sets the upper bound of quantum copies, `name` is used when saving the classification score and f1 score in `results` folder. `start` sets the starting point of the number of quantum copies, and `step_size` sets the increment of quantum copies. In this case, we are running the HQCS from quantum copies one to hundred with increment of 0.25.
+`max_copies` sets the upper bound of quantum copies, `name` is used when saving the classification score and f1 score in the `results` folder. `start` sets the starting point of the number of quantum copies, and `step_size` sets the increment of quantum copies. In this case, we are running the HQCS from quantum copies one to hundred with increment of 0.25.
 
 The output `f1_scores` is a `dictionary` of form:
 ```python
@@ -36,7 +36,11 @@ The output `f1_scores` is a `dictionary` of form:
 `f1_hel` and `f1_fid` are the maximum f1 score achieved in the given boundary of quantum copies.
 `copies_hel` and `copies_fid` are corresponding number of quantum copies at which the maximum occurs
 
+## Classical classifiers
+
+In the `classical_classifiers` folder, we provide python code that uses  [ax-platform][3] to optimize hyperparameters of classical supervised learning models. The code is capable of optimizing the hyperparameters of 13 standard supervised learning models including XGBoost, CatBoost, and Random Forest Classifiers etc.
 
 
 [1]: https://arxiv.org/abs/2012.00058
 [2]: https://archive.ics.uci.edu/about
+[3]: https://ax.dev/
