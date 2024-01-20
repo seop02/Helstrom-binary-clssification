@@ -40,6 +40,43 @@ The output `f1_scores` is a `dictionary` of form:
 
 In the `classical_classifiers` folder, we provide python code that uses  [ax-platform][3] to optimize hyperparameters of classical supervised learning models. The code is capable of optimizing the hyperparameters of 13 standard supervised learning models including XGBoost, CatBoost, and Random Forest Classifiers etc.
 
+For example, to perform hyperparameter optimization on `Hepatitis` dataset for XGBoost and Random Forest Classifiers, we first load the data set:
+
+```python
+from helstrom_classifier.load_data import load_datasets
+X, y  = load_datasets('hepatitis')
+```
+Then, we define appropriate hyperparameter search space:
+```python
+
+parameters = {
+ "XGBooster": [
+    {"name": "learning_rate", "type": "range", "bounds": [0.01, 0.2]},
+    {"name": "verbosity", "type": "choice", "values": [0, 1, 2, 3]},
+    {"name": "booster", "type": "choice", "values": ["gbtree", "dart"]},
+    {"name": "gamma", "type": "range", "bounds": [0.1, 1.0]},
+    {"name": "reg_alpha", "type": "range", "bounds": [40, 180]},
+    {"name": "min_child_weight", "type": "range", "bounds": [0, 10]}
+    ],
+"RandomForest": [
+    {"name": "n_estimators", "type": "range", "bounds": [50, 200]},
+    {"name": "max_depth", "type": "range", "bounds": [5, 20]},
+    {"name": "min_samples_split", "type": "range", "bounds": [2, 10]},
+    {"name": "boostrap", "type": "choice", "values": [True, False]}
+    ]
+}
+
+```
+Finally, we perform the hyperparameter optimization:
+```python
+from classical_classifiers.optimize_loop import optimize_parameters
+
+df = optimize_parameters(parameters, classifiers, X, y)
+
+```
+
+
+
 
 [1]: https://arxiv.org/abs/2012.00058
 [2]: https://archive.ics.uci.edu/about
