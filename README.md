@@ -1,6 +1,6 @@
 # Helstrom-simulation
 
-This is an implementation of the Helstrom Quantum Centroid Simulation(HQCS) classifier introduced in this link.
+This is an implementation of the Helstrom Quantum Centroid Simulation(HQCS) classifier introduced in this [link][5].
 The works in this repository provides python codes that allow users to regenerate experimental data provided in the paper.
 
 ## Helstrom Quantum Centroid Simulation (HQCS)
@@ -97,3 +97,4 @@ In the `Dataset Classification` folder, we provide python code that characterize
 [2]: https://archive.ics.uci.edu/about
 [3]: https://ax.dev/
 [4]: https://link.springer.com/article/10.1007/s10844-015-0368-1
+[5]: https://arxiv.org/abs/2403.15308
